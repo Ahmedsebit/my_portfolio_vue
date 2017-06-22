@@ -1,56 +1,98 @@
 <template>
   <div class="main">
-    <ul class="topnav">
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#news">What I do</a></li>
-      <li><a href="#contact">My Work</a></li>
-      <li class="right"><a href="#about">About Me</a></li>
-    </ul>
-    <div class="app_main">
-      <div class="app_content">
-      <h1>{{ heading }}</h1>
-      <div class="quotes_heading"></div>
-      <div class="quotes">
-        <carousel>
-          <slide>
-            Slide 1 Content
-          </slide>
-          <slide>
-            Slide 2 Content
-          </slide>
-      </carousel>
-      </div>
-      </div>
-    </div>
+    <b-navbar toggleable type="inverse">
 
-    <div class="app_work">
-      <div class="app_content"> <h1> What I do</h1> </div>
-    </div>
+    <b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
-    <div class="app_portfolio">
-      <div class="app_content"> <h1> Portfolio</h1> </div>
-    </div>
+    <b-link class="navbar-brand" to="#">
+      <span>My Portfolio</span>
+    </b-link>
 
-    <div class="app_contact">
-      <div class="app_content"> <h1> Contacts</h1> </div>
-    </div>
-
-    <div class="app_footer">
+    <b-collapse is-nav id="nav_collapse">
       
+      <b-nav is-nav-bar>
+        <b-nav-item>About Me</b-nav-item>
+        <b-nav-item>My Portfolio</b-nav-item>
+        <b-nav-item>Contact Me</b-nav-item>
+      </b-nav>
+      
+      <b-nav is-nav-bar class="ml-auto">
+        
+          <!-- Navbar dropdowns -->
+          <b-nav-item-dropdown text="Lang" right>
+            <b-dropdown-item to="#">EN</b-dropdown-item>
+            <b-dropdown-item to="#">ES</b-dropdown-item>
+            <b-dropdown-item to="#">RU</b-dropdown-item>
+            <b-dropdown-item to="#">FA</b-dropdown-item>
+          </b-nav-item-dropdown> 
+        </b-nav>
+      </b-collapse>
+    </b-navbar>
+    <b-jumbotron header="Ahmed Yusuf"
+                 lead="Automation Engineer" 
+                 height="500px"
+                 img="https://s-media-cache-ak0.pinimg.com/originals/c3/51/ab/c351ab4b9db84d85a8d4f2796c32caba.jpg">
+        <p>For more information visit website</p>
+        <b-btn style="background-color:#282E2B; color:#FFF" href="#">My Portfolio</b-btn>
+    </b-jumbotron>
+
+  <h1>About Me</h1>
+
+  <div class="row">
+  <div class="col-1"></div>  
+  <div class="col-5">
+    <b-card title="Who I'm I?" class="mb-2 about">
+        Andela provides companies with access to the top 1% of global tech talent. 
+        We identify high-potential developers on the African continent, 
+        shape them into world-class technical leaders, and pair them with companies as 
+        full-time, distributed team members. This allows Andela's partners, which range 
+        from startups to Fortune 500s, to accelerate their product roadmaps while minimizing 
+        time spent interviewing, on-boarding, and training new hires.
+        
+        Andela is backed by investors including Spark Capital, Omidyar Network, 
+        Susa Ventures, Steve Case, Founder Collective, Rothenberg Ventures, Learn Capital and 
+        more
+    </b-card>
+  </div>
+
+  <div class="col-6">
+    <b-card title="Skills" class=" mb-2 about">
+      <p>Backednd Development
+      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
+      <p>Frontedn Development
+      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
+      <p>Machine Learning
+      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
+      <p>Data Science
+      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
+      <p>For more infomation on skills, click to download my cv</p>
+      
+    </b-card>
+  </div>
+  </div>
+  <div class="rule"></div>
+  <hr class="half-rule rule">
+  <h1 class="page-header">My Portfolio</h1>
+  <div class="row">
+    <div class="col-4 transform_portfolio_1">
     </div>
-    
+    <div class="col-4 transform_portfolio_2">
+    </div>
+    <div class="col-4 transform_portfolio_1">
+    </div> 
+  </div>
+
+  <div class="rule"></div>
+  <h1 class="page-header">Contact Me</h1>
   </div>
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   name: 'main',
-  components: {
-    Carousel,
-    Slide
-  },
   data () {
     return {
       heading: 'Software developement with a midas touch',
@@ -90,143 +132,32 @@ export default {
 
 <style scoped>
 
-h1 {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
+.about{
+  width: 500px
 }
 
-h3 {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 15.4px;
+.transform_portfolio_1 {
+    height: 600px;
+    background-color: #4F5C56;
 }
 
-p {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 20px;
+.transform_portfolio_1:hover {
+    height: 600px;
+    background-color: #282E2B;
 }
 
-blockquote {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 21px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 30px;
+.transform_portfolio_2 {
+    height: 600px;
+    background-color: #282E2B;
 }
 
-pre {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 18.5714px;
+.transform_portfolio_2:hover {
+    height: 600px;
+    background-color: #4F5C56;
 }
 
-.name{
-    color: #FEFEFF;
-    padding-left: 10px;
-    padding-top:10px;
-    font-size: 1.2em;
-    text-align: left;
+.rule{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-
-ul.topnav li {float: left;}
-
-ul.topnav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 24px 16px;
-    text-decoration: none;
-}
-
-ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #376873;
-}
-
-ul.topnav li a:hover:not(.active) {background-color: #78E3FD;}
-
-ul.topnav li a.active {background-color: #78E3FD;}
-
-ul.topnav li.right {float: right;}
-
-@media screen and (max-width: 600px){
-    ul.topnav li.right, 
-    ul.topnav li {float: none;}
-}
-
-.quotes_heading{
-  width: 400px;
-  height: 50px;
-  margin-left: 50px;
-  margin-top: 100px;
-  background-color: #376873;
-}
-
-.quotes{
-  width: 400px;
-  height: 200px;
-  margin-left: 50px;
-  background-color: #78E3FD;
-}
-
-.app_content{
-  width: 100%;
-  padding-top: 10px;
-}
-
-.app_main{
-  background-color: #FEFEFF;
-  width:100%;
-  height:600px;
-  color: #376873;
-}
-
-.app-heading{
-  font-family: Helvetica;
-}
-
-.app_work{
-  background-color: #78E3FD;
-  width:100%;
-  height:300px;
-  color: #376873;
-}
-
-.app_portfolio{
-  background-color: #376873;
-  width:100%;
-  height:600px;
-  color: #FEFEFF;
-}
-
-.app_contact{
-  background-color: #78E3FD;
-  width:100%;
-  height:600px;
-}
-
-.app_footer{
-  background-color: #376873;
-  width:100%;
-  height:50px;
-}
-
 </style>

@@ -96,13 +96,13 @@
       <div class="row">
         <div class="col-3"></div>
       <div class="col-2">
-        <icon name="facebook" scale="2"></icon>
+        <icon name="facebook" scale="2" class="transform_icon"></icon>
       </div>
       <div class="col-2">
-        <icon name="twitter" scale="2"></icon>
+        <icon name="twitter" scale="2" class="transform_icon"></icon>
       </div>
       <div class="col-2">
-        <p><icon name="google-plus" scale="2"></icon></p>
+        <p><icon name="google-plus" scale="2" class="transform_icon"></icon></p>
       </div>
       <div class="col-3"></div>
       </div>
@@ -200,6 +200,14 @@ export default {
 .transform_portfolio_2:hover {
     height: 600px;
     background-color: #4F5C56;
+}
+
+.transform_icon {
+    color: #282E2B;
+}
+
+.transform_icon:hover {
+    color: #4F5C56;
 }
 
 .rule{

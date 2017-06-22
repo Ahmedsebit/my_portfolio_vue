@@ -57,14 +57,14 @@
 
   <div class="col-6">
     <b-card title="Skills" class=" mb-2 about">
-      <p>Backednd Development
-      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
-      <p>Frontedn Development
-      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
+      <p>Backedend Development
+      <b-progress v-model="backend_counter" :precision="1" show-progress animated></b-progress></p>
+      <p>Frontend Development
+      <b-progress v-model="frontend_counter" :precision="1" show-progress animated></b-progress></p>
       <p>Machine Learning
-      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
+      <b-progress v-model="machinelearning_counter" :precision="1" show-progress animated></b-progress></p>
       <p>Data Science
-      <b-progress v-model="counter" :precision="1" show-progress animated></b-progress></p>
+      <b-progress v-model="datascience_counter" :precision="1" show-progress animated></b-progress></p>
       <p>For more infomation on skills, click to download my cv</p>
       
     </b-card>
@@ -84,7 +84,49 @@
 
   <div class="rule"></div>
   <h1 class="page-header">Contact Me</h1>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-5">
+      <h1 class="contact-header">Hire Me</h1>
+      <p>I am seeking a contracts on automation projects
+        which deal with artificial inteligence, machine leaning,
+        data mining and fullstack development. I'm seeking
+        new challenges and the opportunity to work along with talented people.
+      </p>
+      <div class="row">
+        <div class="col-3"></div>
+      <div class="col-2">
+        <icon name="facebook" scale="2"></icon>
+      </div>
+      <div class="col-2">
+        <icon name="twitter" scale="2"></icon>
+      </div>
+      <div class="col-2">
+        <p><icon name="google-plus" scale="2"></icon></p>
+      </div>
+      <div class="col-3"></div>
+      </div>
+    </div>
+    <div class="col-5">
+      <b-card title="Reach Out" class=" mb-2">
+        <p><b-form-input v-model="text" type="text" placeholder="Enter your email"></b-form-input></p>
+
+        <p><b-form-input v-model="text" type="text" placeholder="Enter your name"></b-form-input></p>
+
+        <p><b-form-input v-model="text" type="text" placeholder="Enter your phonenumber"></b-form-input></p>
+
+        <p><b-form-input textarea v-model="text" placeholder="Typt your message here"></b-form-input></p>
+        <p><b-btn style="background-color:#4F5C56; color:#FFF" href="#">Send</b-btn></p>
+      </b-card>
+
+    </div>
+    <div class="col-1"></div>
   </div>
+  <div class="rule"></div>
+  <hr class="half-rule rule">
+  <div class="footer">© 2017 Ahmed Yusuf - All Rights Reserved.</div>
+  </div>
+  
 </template>
 
 <script>
@@ -96,6 +138,10 @@ export default {
   data () {
     return {
       heading: 'Software developement with a midas touch',
+      backend_counter: 100,
+      frontend_counter: 90,
+      machinelearning_counter: 45,
+      datascience_counter: 45,
       name: {
         firstName: 'Ahmed',
         secondName: 'Yusuf'
@@ -158,6 +204,19 @@ export default {
 
 .rule{
   padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contact-header{
+  font-size:5.5em;
+}
+
+.fa-icon {
+  width: auto;
+  height: 3em; /* or any other relative font sizes */
+}
+
+.footer{
   padding-bottom: 20px;
 }
 </style>
